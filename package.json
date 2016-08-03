@@ -1,0 +1,20 @@
+{
+  "name": "generator-web-amd",
+  "version": "0.1.0",
+  "description": "Yeoman generator for simple web projects using AMD",
+  "author": "Marc Hibbins",
+  "files": [
+      "app"
+  ],
+  "keywords": [
+    "yeoman-generator",
+    "amd",
+    "requirejs",
+    "sass",
+    "gulp"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.24.1"
+  },
+  "license": "MIT"
+}
