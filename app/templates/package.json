@@ -8,6 +8,7 @@
     "gulp": "./node_modules/.bin/gulp"
   },
   "devDependencies": {
+    "almond": "^0.3.2",
     "gulp": "^3.9.1",
     "gulp-requirejs-optimize": "^1.2.0"
   },

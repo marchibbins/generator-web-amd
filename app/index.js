@@ -6,5 +6,14 @@ module.exports = generators.Base.extend({
             this.templatePath(),
             this.destinationPath()
         );
+    },
+    install: function () {
+        this.npmInstall();
+    },
+    end: function () {
+        this.fs.copy(
+            this.destinationPath('node_modules/almond/almond.js'),
+            this.destinationPath('scripts/almond.js')
+        );
     }
 });
