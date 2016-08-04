@@ -15,5 +15,6 @@ module.exports = generators.Base.extend({
             this.destinationPath('node_modules/almond/almond.js'),
             this.destinationPath('scripts/almond.js')
         );
+        this.spawnCommand('npm', ['run', 'gulp']);
     }
 });
