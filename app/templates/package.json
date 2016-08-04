@@ -1,0 +1,15 @@
+{
+  "name": "hello-world",
+  "version": "0.1.0",
+  "description": "",
+  "author": "",
+  "main": "index.html",
+  "scripts": {
+    "gulp": "./node_modules/.bin/gulp"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-requirejs-optimize": "^1.2.0"
+  },
+  "license": "MIT"
+}
