@@ -3,7 +3,9 @@ var gulp = require('gulp'),
 
 gulp.task('scripts', function () {
     return gulp.src('scripts/main.js')
-        .pipe(requirejsOptimize())
+        .pipe(requirejsOptimize({
+            include: ['almond', 'main']
+        }))
         .pipe(gulp.dest('dist'));
 });
 
