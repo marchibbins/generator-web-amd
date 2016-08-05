@@ -11,10 +11,6 @@ module.exports = generators.Base.extend({
         this.npmInstall();
     },
     end: function () {
-        this.fs.copy(
-            this.destinationPath('node_modules/almond/almond.js'),
-            this.destinationPath('scripts/almond.js')
-        );
         this.spawnCommand('npm', ['run', 'gulp']);
     }
 });
