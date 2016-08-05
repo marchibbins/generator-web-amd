@@ -1,7 +1,12 @@
 var gulp = require('gulp'),
+    del = require('del'),
     requirejsOptimize = require('gulp-requirejs-optimize'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify');
+
+gulp.task('delete', function () {
+    del(['dist/*']);
+});
 
 gulp.task('scripts', function () {
     return gulp.src('scripts/main.js')
@@ -14,4 +19,4 @@ gulp.task('scripts', function () {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', ['scripts']);
+gulp.task('default', ['delete', 'scripts']);
