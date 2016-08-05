@@ -19,4 +19,8 @@ gulp.task('scripts', function () {
         .pipe(gulp.dest('dist'));
 });
 
+gulp.task('watch', function () {
+    gulp.watch('scripts/**/*.js', ['scripts']);
+});
+
 gulp.task('default', ['delete', 'scripts']);
