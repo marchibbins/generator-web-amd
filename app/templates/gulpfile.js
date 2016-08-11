@@ -3,6 +3,7 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     requirejsOptimize = require('gulp-requirejs-optimize'),
     rename = require('gulp-rename'),
+    sass = require('gulp-sass'),
     uglify = require('gulp-uglify');
 
 gulp.task('delete', function () {
@@ -21,8 +22,15 @@ gulp.task('scripts', function () {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('watch', function () {
-    gulp.watch('scripts/**/*.js', ['scripts']);
+gulp.task('styles', function () {
+  return gulp.src('styles/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', ['delete', 'scripts']);
+gulp.task('watch', function () {
+    gulp.watch('scripts/**/*.js', ['scripts']);
+    gulp.watch('styles/**/*.scss', ['styles']);
+});
+
+gulp.task('default', ['delete', 'scripts', 'styles']);
