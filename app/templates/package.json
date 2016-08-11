@@ -2,7 +2,7 @@
   "name": "hello-world",
   "version": "0.1.0",
   "description": "",
-  "author": "",
+  "author": "Marc Hibbins",
   "main": "index.html",
   "scripts": {
     "gulp": "./node_modules/.bin/gulp",
