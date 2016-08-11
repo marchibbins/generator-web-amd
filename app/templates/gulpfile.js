@@ -24,12 +24,12 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('styles', function () {
-  return gulp.src('styles/main.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('dist'))
-    .pipe(minifyCSS())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('dist'));
+    return gulp.src('styles/main.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('dist'))
+        .pipe(minifyCSS())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('watch', function () {
