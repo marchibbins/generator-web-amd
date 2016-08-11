@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     del = require('del'),
+    plumber = require('gulp-plumber'),
     requirejsOptimize = require('gulp-requirejs-optimize'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify');
@@ -10,6 +11,7 @@ gulp.task('delete', function () {
 
 gulp.task('scripts', function () {
     return gulp.src('scripts/main.js')
+        .pipe(plumber())
         .pipe(requirejsOptimize({
             include: ['almond', 'main']
         }))
