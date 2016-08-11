@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     del = require('del'),
+    minifyCSS = require('gulp-minify-css'),
     plumber = require('gulp-plumber'),
     requirejsOptimize = require('gulp-requirejs-optimize'),
     rename = require('gulp-rename'),
@@ -23,8 +24,11 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('styles', function () {
-  return gulp.src('styles/**/*.scss')
+  return gulp.src('styles/main.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('dist'))
+    .pipe(minifyCSS())
+    .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('dist'));
 });
 
